@@ -1,27 +1,32 @@
-#!/usr/bin/node
-const request = require('request');
-const API_URL = 'https://swapi-api.hbtn.io/api';
-
-if (process.argv.length > 2) {
-	request(`${API_URL}/films/${process.argv[2]}/`, (err, _, body) => {
-		if (err) {
-			console.log(err);
-		}
-
-		const charactersURL = JSON.parse(body).characters;
-		const charactersName = charactersURL.map(
-			url => new Promise((resolve, reject) => {
-				request(url, (promiseErr, __, charactersReqBody) => {
-					if (promiseErr) {
-						reject(promiseErr);
-					}
-
-					resolve(JSON.parse(charactersReqBody).name);
-				});
-			}));
-
-		Promise.all(charactersName)
-			.then(names => console.log(names.join('\n')))
-			.catch(allErr => console.log(allErr));
-	});
+{
+	"name": "Luke Skywalker",
+	"height": "172",
+	"mass": "77",
+	"hair_color": "blond",
+	"skin_color": "fair",
+	"eye_color": "blue",
+	"birth_year": "19BBY",
+	"gender": "male",
+	"homeworld": "https://swapi-api.alx-tools.com/api/planets/1/",
+	"films": [
+		"https://swapi-api.alx-tools.com/api/films/2/",
+		"https://swapi-api.alx-tools.com/api/films/6/",
+		"https://swapi-api.alx-tools.com/api/films/3/",
+		"https://swapi-api.alx-tools.com/api/films/1/",
+		"https://swapi-api.alx-tools.com/api/films/7/"
+	],
+	"species": [
+		"https://swapi-api.alx-tools.com/api/species/1/"
+	],
+	"vehicles": [
+		"https://swapi-api.alx-tools.com/api/vehicles/14/",
+		"https://swapi-api.alx-tools.com/api/vehicles/30/"
+	],
+	"starships": [
+		"https://swapi-api.alx-tools.com/api/starships/12/",
+		"https://swapi-api.alx-tools.com/api/starships/22/"
+	],
+	"created": "2014-12-09T13:50:51.644000Z",
+	"edited": "2014-12-20T21:17:56.891000Z",
+	"url": "https://swapi-api.alx-tools.com/api/people/1/"
 }

@@ -32,13 +32,13 @@
 16 verbose url raw request
 17 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
 18 verbose url resolved https://registry.npmjs.org/request
-19 info trying registry request attempt 1 at 20:35:08
+19 info trying registry request attempt 1 at 07:16:34
 20 http GET https://registry.npmjs.org/request
 21 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
-22 info trying registry request attempt 2 at 20:35:19
+22 info trying registry request attempt 2 at 07:16:44
 23 http GET https://registry.npmjs.org/request
 24 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
-25 info trying registry request attempt 3 at 20:36:19
+25 info trying registry request attempt 3 at 07:17:44
 26 http GET https://registry.npmjs.org/request
 27 silly lockFile 9d461bcf-request request@
 28 silly lockFile 9d461bcf-request request@
